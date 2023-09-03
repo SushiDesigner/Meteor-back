@@ -1,21 +1,21 @@
 # SushiBlox-Website
 Website for sushiblox I guess.
 
-Private for now might open source.
+~~Private for now might open source.~~
 
-The setup is easy install required node modules and setup a nginx reverse proxy on port 9000.
+The setup is ~~easy install required node modules and setup a nginx reverse proxy on port 9000.~~
 
 Uses MongoDB for datastorage. Redis for special things
 
 # Advice
-This uses hardcoded domain names in the code and relies on cloudflare headers for IP configs. so yeahhhhhhhhhhhhhhhhhhhhhhhhhh
+~~This uses hardcoded domain names in the code~~ and relies on cloudflare headers for IP configs. so yeahhhhhhhhhhhhhhhhhhhhhhhhhh
 
 
 # Redis
 idk set it up nerd
 
 # setup
-LOL I DID NOT MAKE THIS EASY
+easy enough
 
 # Example
 
