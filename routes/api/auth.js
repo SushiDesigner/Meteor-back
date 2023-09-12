@@ -16,7 +16,7 @@ function selectKeys(obj, keysArray) {
   }
 
 router.get("/",requireAuth,async (req, res) => {
-    const filtered = selectKeys(req.userdocument,["username","coins","userid","admin","ugcpermission","moderation","colors","inventory","joindate","lastclaimofcurrency","membership","friendrequests","friends","badges","status","timesincelastrequest","avatartype","discordid","bio","recentlyplayed","css"])
+    const filtered = selectKeys(req.userdocument,["username","coins","userid","admin","ugcpermission","moderation","colors","joindate","lastclaimofcurrency","membership","friendrequests","friends","badges","status","timesincelastrequest","avatartype","discordid","bio","recentlyplayed","css"])
     //console.log(filtered.recentlyplayedgames)
     filtered._2faenabled = false
     if (req.userdocument?.twofasecrets){

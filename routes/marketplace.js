@@ -68,7 +68,7 @@ router.post("/marketplace/purchase",requireAuth, async (req, res) => {
                     coins: req.userdocument.coins - itemdoc.Price
                 },
                 $push: {
-                    inventory: {Type: itemdoc.Type,ItemId: itemdoc.ItemId, ItemName: itemdoc.Name, Equipped: false}
+                    inventory: {Type: itemdoc.Type,ItemId: itemdoc.ItemId, Equipped: false}
                 }
             }, 
             function(err, doc) {
@@ -211,7 +211,7 @@ router.post('/v1/purchases/products/:assetId',requireAuth,async (req, res) => {
                     coins: req.userdocument.coins - itemdoc.Price
                 },
                 $push: {
-                    inventory: {Type: itemdoc.Type,ItemId: itemdoc.ItemId, ItemName: itemdoc.Name, Equipped: false}
+                    inventory: {Type: itemdoc.Type,ItemId: itemdoc.ItemId, Equipped: false}
                 }
             }, 
             function(err, doc) {

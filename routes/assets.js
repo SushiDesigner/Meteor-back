@@ -6,6 +6,7 @@ var path = require('path');
 const crypto = require('crypto');
 require('dotenv').config()
 const RCC_HOST = process.env.RCC_HOST
+const ACCESS_KEY = process.env.ACCESS_KEY
 const User = require('../model/user.js')
 const catalog = require("../model/item")
 const games = require('./../model/games.js')
@@ -54,6 +55,8 @@ if (req.query.name){
     console.log(ip)
     var sanitizedid = req.query.id.match(rgx)
     if (ip === RCC_HOST || ip ===  "::ffff:"+RCC_HOST){
+      console.log(req.headers["accesskey"])
+      if (req.headers?.["accesskey"] === ACCESS_KEY){
       fs.access("./assets/ugc/gamefile-"+sanitizedid+".rbxl", fs.F_OK, (err) => {
         if (err) {
           
@@ -67,6 +70,8 @@ if (req.query.name){
         return
       })
     }
+    }
+    return res.status(401).end()
   }else{
     if (!req.query.id){
       req.query.id = req.query.assetversionid

@@ -166,6 +166,7 @@ router.get('/gameinfo/:id', async (req, res) => {
     
     const response = await games.findOne({idofgame: id}).lean().select(['idofgame', 'version', 'nameofgame', 'numberofplayers', 'visits', 'useridofowner', 'players','descrption']).populate("owner", "username")
     //console.log(response)
+    //console.log(response)
 
     if (!response){
         return res.json({status: "error", error: "Not found"})
